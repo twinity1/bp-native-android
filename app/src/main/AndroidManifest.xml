@@ -20,10 +20,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PerformanceActivity"></activity>
 
         <receiver android:name=".NotificationPublisher" />
 
-        <activity android:name=".NotificationActivity"></activity>
+        <activity android:name=".NotificationActivity" />
         <activity android:name=".StorageActivity" />
         <activity android:name=".BiometricsActivity" />
         <!--
@@ -41,7 +42,6 @@
         <activity
             android:name=".LocationActivity"
             android:label="@string/title_activity_location" />
-
         <activity
             android:name=".CameraResultActivity"
             android:label="@string/title_activity_camera_result"

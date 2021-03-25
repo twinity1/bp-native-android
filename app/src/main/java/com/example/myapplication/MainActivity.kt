@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, NotificationActivity::class.java)
             startActivity(intent)
         }
+
+        performanceBtn.setOnClickListener {
+            val intent = Intent(this, PerformanceActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
