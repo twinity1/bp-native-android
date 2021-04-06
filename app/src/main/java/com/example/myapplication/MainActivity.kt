@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         performanceBtn.setOnClickListener {
             val intent = Intent(this, PerformanceActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(0, 0);
         }
     }
 

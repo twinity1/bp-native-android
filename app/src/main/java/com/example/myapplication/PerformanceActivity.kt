@@ -2,11 +2,13 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_performance.*
@@ -14,7 +16,11 @@ import kotlinx.android.synthetic.main.activity_performance.*
 class PerformanceActivity : AppCompatActivity() {
     lateinit var adapter: CustomAdapter
 
+    var start: Long = 0;
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        start = System.currentTimeMillis();
+
         super.onCreate(savedInstanceState)
         setContentView(
             R.layout.activity_performance)
@@ -29,6 +35,14 @@ class PerformanceActivity : AppCompatActivity() {
 
         recycleView.layoutManager = LinearLayoutManager(this)
         recycleView.adapter = adapter
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        val alertDialogBuilder = AlertDialog.Builder(this)
+        alertDialogBuilder.setMessage((System.currentTimeMillis() - start).toString());
+        alertDialogBuilder.create().show()
     }
 }
 
